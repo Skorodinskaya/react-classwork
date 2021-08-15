@@ -1,0 +1,15 @@
+.wrap {
+    display: flex;
+}
+
+.wrap >div {
+    width: 50%;
+}
+
+.post-box {
+    background: cadetblue;
+}
+
+.btn-box {
+    background: beige;
+}

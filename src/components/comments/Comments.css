@@ -1,0 +1,15 @@
+.wrapper {
+display: flex;
+}
+
+.wrapper > div {
+    width: 50%;
+}
+
+.content-box {
+    background: darksalmon;
+}
+
+.comment-box {
+    background: cornflowerblue;
+}
