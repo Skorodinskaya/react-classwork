@@ -1,6 +1,7 @@
 import {BrowserRouter as Router, Link, Route} from "react-router-dom";
 import Cars from "./components/cars/Cars";
 import Form from "./forms/Form";
+import SelectForm from "./forms/SelectFrom";
 
 export default function App() {
   return (
@@ -17,13 +18,7 @@ export default function App() {
           <Route path={'/home'}/>
           <Route path={'/cars'} component={Cars}/>
           <Route path={'/create-car'} component={Form}/>
-          {/*<Route path = {'/update-car'} component={}/>*/}
-          <select>
-            <option value="">1</option>
-            <option value="">1</option>
-            <option value="">1</option>
-            <option value="">1</option>
-          </select>
+          <Route path = {'/update-car'} component={SelectForm}/>
         </div>
       </Router>
   );
