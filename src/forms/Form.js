@@ -1,6 +1,6 @@
-import {addCar} from "../../services/car.api.service";
+import {addCar} from "../services/car.api.service";
 import {useState} from "react";
-import Cars from "../cars/Cars";
+import Cars from "../components/cars/Cars";
 
 export default function () {
     const [createCar, setcreateCar] = useState({model: '', price: '', year: ''})

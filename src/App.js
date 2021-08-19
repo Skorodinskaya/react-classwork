@@ -1,6 +1,6 @@
 import {BrowserRouter as Router, Link, Route} from "react-router-dom";
 import Cars from "./components/cars/Cars";
-import Form from "./components/forms/Form";
+import Form from "./forms/Form";
 
 export default function App() {
   return (
