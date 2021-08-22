@@ -37,7 +37,8 @@ export default function SelectForm() {
                 <select>
                     {
                         cars.map(item => <option key={item.id}
-                                                 value={item.id}>{item.model} - {item.price} - {item.year}</option>)
+                                                 value={item.id}>{item.model} - {item.price} - {item.year}
+                        </option>)
                     }
                 </select>
             </form>
