@@ -1,4 +1,4 @@
-export default function Car({item, deleteBtn, editBtn, setFormState}) {
+export default function Car({item, deleteBtn, setFormState}) {
 const deleteButton = () => {
     deleteBtn(item.id)
 }

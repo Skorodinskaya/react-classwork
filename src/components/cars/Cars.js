@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-import {deleteCar, editCar, getCars} from "../../services/car.api.service";
+import {deleteCar, getCars} from "../../services/car.api.service";
 import Car from "../car/Car";
 
 export default function Cars({setFormState}) {
