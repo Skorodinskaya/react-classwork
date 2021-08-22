@@ -3,10 +3,10 @@ import {useState} from "react";
 import Cars from "../components/cars/Cars";
 
 export default function () {
-    const [createCar, setcreateCar] = useState({model: '', price: '', year: ''})
+    const [createCar, setCreateCar] = useState({model: '', price: '', year: ''})
 
     const onFormInputCreate = (e) => {
-        setcreateCar({...createCar, [e.target.name]: e.target.value})
+        setCreateCar({...createCar, [e.target.name]: e.target.value})
     }
     const create = (e) => {
         e.preventDefault();

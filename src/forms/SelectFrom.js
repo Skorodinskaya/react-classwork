@@ -7,7 +7,7 @@ export default function SelectForm() {
 
     useEffect(() => {
         getCars().then(value => setCars([...value]));
-    })
+    }, [cars])
 
     const chooseCar = (e) => {
         const chosenCar = cars.find(car => car.id === +e.target.value)
@@ -36,7 +36,7 @@ export default function SelectForm() {
                 <select>
                     {
                         cars.map(item => <option key={item.id}
-                                                 value={item.id}>{item.id} - {item.model} - {item.year}</option>)
+                                                 value={item.id}>{item.model} - {item.price} - {item.year}</option>)
                     }
                 </select>
             </form>
