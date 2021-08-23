@@ -17,7 +17,7 @@ const addCar = (car) => {
 }
 
 const editCar = (car) => {
-    fetch('url' + '/' + car.id, {
+    fetch(url + '/' + car.id, {
         method: 'PUT',
         body: JSON.stringify(car),
         headers: {
