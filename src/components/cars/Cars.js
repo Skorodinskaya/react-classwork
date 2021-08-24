@@ -1,20 +1,16 @@
 import {useEffect, useState} from "react";
-import {deleteCar, getCars} from "../../services/car.api.service";
-import Car from "../car/Car";
+import {getCars} from "../services/api.service";
+import Car from "./Car";
 
-export default function Cars({setFormState}) {
-    let [car, setCar] = useState([]);
+export default function Cars() {
+  const [cars, setCars] = useState([])
+  useEffect(()=> {
+    getCars().then(value => setCars([...value]))
+  }, [])
+  return (
+    <div>
+      {cars.map(value => <Car item={value} key = {value.id}/>)}
 
-    useEffect(() => {
-        getCars().then(value => setCar([...value]))
-    })
-    const deleteBtn = (id) => {
-        deleteCar(id)
-    }
-
-    return (
-        <div>
-            <div> {car.map(value => <Car item={value} key={value.id} setFormState={setFormState} deleteBtn={deleteBtn}/>)}</div>
-        </div>
-    );
+    </div>
+  );
 }
