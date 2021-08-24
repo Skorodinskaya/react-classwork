@@ -18,4 +18,24 @@ const postCar = (car) => {
 }
 
 
-export {getCars, postCar}
+const editCar = (car) => {
+    fetch(url + '/' + car.id, {
+        method: 'PUT',
+        body: JSON.stringify(car),
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+        },
+    })
+        .then(value => value.json())
+        .then(value => console.log(value))
+}
+
+
+const deleteCar = (id) => {
+    fetch(url + '/' + id, {
+        method: 'DELETE',
+    })
+        .then()}
+
+
+export {getCars, postCar, editCar, deleteCar}
