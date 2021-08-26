@@ -1,18 +1,15 @@
 const reducer = (state, action) => {
-switch (action.type) {
-    case 'GET_USERS':
-        let users = action.payload;
-        return{...state, users: users}
+    const {type, payload} = action
+    switch (type) {
+        case 'GET_USERS':
+            return {...state, users: payload}
 
+        case 'GET_POSTS':
+            return {...state, posts: payload}
 
-    case 'GET_POSTS':
-        let posts = action.payload;
-        return{...state, users: posts}
-
-    default: return {...state}
-
-
-}
+        default:
+            return {...state}
+    }
 }
 
 export default reducer
