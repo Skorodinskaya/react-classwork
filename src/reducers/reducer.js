@@ -8,6 +8,7 @@ switch (action.type) {
     case 'GET_POSTS':
         let posts = action.payload;
         return{...state, users: posts}
+
     default: return {...state}
 
 

@@ -1,8 +1,14 @@
-export default function Users({item}) {
-  return (
-    <div>
-      {item.map(value => <div>{value.name}</div>)}
+import User from "./User";
 
-    </div>
-  );
+export default function Users({item}) {
+    return (
+        <div>
+            {item.map(value =>
+                <div>
+                    {value.name}
+                    <User/>
+                </div>)}
+
+        </div>
+    );
 }

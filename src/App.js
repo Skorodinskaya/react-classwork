@@ -2,6 +2,7 @@ import reducer from "./reducers/reducer";
 import {getPosts, getUsers} from "./services/api.service";
 import Users from "./componets/users/Users";
 import Posts from "./componets/posts/Posts";
+import {useEffect, useReducer} from "react";
 
 export default function App() {
     const [{users, posts}, dispatch] = useReducer(reducer, {users: [], posts: []})
@@ -14,9 +15,6 @@ export default function App() {
         let posts = await getPosts();
         dispatch({type: 'GET_POSTS', payload: posts});
     }, [])
-
-
-
 
     return (
         <div>

@@ -5,8 +5,8 @@ const getUsers = () => {
         .then(value => value.json())
 }
 
-const getPosts = () => {
-    return fetch (url + 'posts')
+const getPosts = (id) => {
+    return fetch (url + 'users/' + id + '/posts')
         .then(value => value.json())
 }
 
