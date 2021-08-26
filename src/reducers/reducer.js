@@ -8,7 +8,7 @@ const reducer = (state, action) => {
     if (action.act === '+') {
         return {...state, b: state.b + action.object}
     } else if (action.act === '-') {
-        return {...state, b: state - action.object}
+        return {...state, b: state.b- action.object}
     }
 
     if (action.act === '+') {

@@ -5,20 +5,21 @@
 // логіку реалізувати через reducer
 
 import reducer from "./reducers/reducer";
+import {useReducer} from "react";
 
 export default function App() {
-    const [{a, b, c, dispatch}] = useReducer(reducer, {a: 0, b: 0, c: 0})
+    const [{a, b, c}, dispatch] = useReducer(reducer, {a: 0, b: 0, c: 0})
     return (
         <div>
             <h2>Object 1 - {a}</h2>
            <button onClick={() => dispatch ({object: 1, act: '+' }) }>Increase</button>
-           <button onClick={() => dispatch ({object: 1, act: '-' }) }>Increase</button>
-            <h2>Object 1 - {b}</h2>
+           <button onClick={() => dispatch ({object: 1, act: '-' }) }>Decrease</button>
+            <h2>Object 2 - {b}</h2>
            <button onClick={() => dispatch ({object: 1, act: '+' }) }>Increase</button>
-           <button onClick={() => dispatch ({object: 1, act: '-' }) }>Increase</button>
-            <h2>Object 1 - {c}</h2>
+           <button onClick={() => dispatch ({object: 1, act: '-' }) }>Decrease</button>
+            <h2>Object 3 - {c}</h2>
            <button onClick={() => dispatch ({object: 1, act: '+' }) }>Increase</button>
-           <button onClick={() => dispatch ({object: 1, act: '-' }) }>Increase</button>
+           <button onClick={() => dispatch ({object: 1, act: '-' }) }>Decrease</button>
         </div>
     );
 }
