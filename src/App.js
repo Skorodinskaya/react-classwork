@@ -12,14 +12,14 @@ export default function App() {
     return (
         <div>
             <h2>Object 1 - {a}</h2>
-           <button onClick={() => dispatch ({object: 1, act: '+' }) }>Increase</button>
-           <button onClick={() => dispatch ({object: 1, act: '-' }) }>Decrease</button>
+           <button onClick={() => dispatch ({name: '1', object: 1, act: '+' }) }>Increase</button>
+           <button onClick={() => dispatch ({name: '1', object: 1, act: '-' }) }>Decrease</button>
             <h2>Object 2 - {b}</h2>
-           <button onClick={() => dispatch ({object: 1, act: '+' }) }>Increase</button>
-           <button onClick={() => dispatch ({object: 1, act: '-' }) }>Decrease</button>
+           <button onClick={() => dispatch ({name: '2', object: 1, act: '+' }) }>Increase</button>
+           <button onClick={() => dispatch ({name: '2', object: 1, act: '-' }) }>Decrease</button>
             <h2>Object 3 - {c}</h2>
-           <button onClick={() => dispatch ({object: 1, act: '+' }) }>Increase</button>
-           <button onClick={() => dispatch ({object: 1, act: '-' }) }>Decrease</button>
+           <button onClick={() => dispatch ({name: '3', object: 1, act: '+' }) }>Increase</button>
+           <button onClick={() => dispatch ({name: '3', object: 1, act: '-' }) }>Decrease</button>
         </div>
     );
 }
