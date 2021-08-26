@@ -1,24 +1,27 @@
-// стоврити об'єкт {a:0,b:0,c:0}
-// Стоврити 6 кнопок.
-//     по дві на кожен з параметрів об'єкту.
-// одна кнопка збільшує значення , інша зменшує
-// логіку реалізувати через reducer
-
 import reducer from "./reducers/reducer";
+import {getPosts, getUsers} from "./services/api.service";
+import Users from "./componets/users/Users";
+import Posts from "./componets/posts/Posts";
 
 export default function App() {
-    const [{a, b, c, dispatch}] = useReducer(reducer, {a: 0, b: 0, c: 0})
+    const [{users, posts}, dispatch] = useReducer(reducer, {users: [], posts: []})
+    useEffect(async () => {
+        let users = await getUsers();
+        dispatch({type: 'GET_USERS', payload: users});
+    }, [])
+
+    useEffect(async () => {
+        let posts = await getPosts();
+        dispatch({type: 'GET_POSTS', payload: posts});
+    }, [])
+
+
+
+
     return (
         <div>
-            <h2>Object 1 - {a}</h2>
-           <button onClick={() => dispatch ({object: 1, act: '+' }) }>Increase</button>
-           <button onClick={() => dispatch ({object: 1, act: '-' }) }>Increase</button>
-            <h2>Object 1 - {b}</h2>
-           <button onClick={() => dispatch ({object: 1, act: '+' }) }>Increase</button>
-           <button onClick={() => dispatch ({object: 1, act: '-' }) }>Increase</button>
-            <h2>Object 1 - {c}</h2>
-           <button onClick={() => dispatch ({object: 1, act: '+' }) }>Increase</button>
-           <button onClick={() => dispatch ({object: 1, act: '-' }) }>Increase</button>
+            <Users item={users}/>
+            <Posts item={posts}/>
         </div>
     );
 }

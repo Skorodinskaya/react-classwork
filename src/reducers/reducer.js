@@ -1,21 +1,17 @@
 const reducer = (state, action) => {
-    if(action.act === '+') {
-        return{...state, a: state.a + action.object}
-    } else if(action.act === '-') {
-        return {...state, a: state.a - action.object}
-    }
+switch (action.type) {
+    case 'GET_USERS':
+        let users = action.payload;
+        return{...state, users: users}
 
-    if (action.act === '+') {
-        return {...state, b: state.b + action.object}
-    } else if (action.act === '-') {
-        return {...state, b: state - action.object}
-    }
 
-    if (action.act === '+') {
-        return {...state, c: state.c + action.object}
-    } else if (action.act === '-') {
-        return {...state, c: state.c - action.object}
-    }
-    return {...state}
- }
+    case 'GET_POSTS':
+        let posts = action.payload;
+        return{...state, users: posts}
+    default: return {...state}
+
+
+}
+}
+
 export default reducer
