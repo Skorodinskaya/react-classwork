@@ -1,0 +1,5 @@
+const SET_TASK = 'SET_TASK';
+const DELETE_TASK = 'DELETE_TASK';
+const EDIT_TASK = 'EDIT_TASK'
+
+export {SET_TASK, DELETE_TASK, EDIT_TASK}
