@@ -1,11 +1,12 @@
 import {DELETE_TASK, EDIT_TASK, SET_TASK} from "../actions";
 
-export const mainReducer = (state = {tasks: []}, action) => {
+const initialState = {tasks: []};
+
+export const mainReducer = (state = initialState, action) => {
     switch (action.type) {
         case SET_TASK:
             const arr = state.tasks.sort((a, b) => a.id - b.id)
-            console.log(arr)
-            const id = arr['length']?.id || 1;
+            const id = arr[arr.length-1]?.id + 1 || 1;                             // цей код генерує нову id
             return {...state, tasks: [...state.tasks, {...action.payload, id}]}
 
         case DELETE_TASK:
@@ -13,7 +14,9 @@ export const mainReducer = (state = {tasks: []}, action) => {
             return {...state, tasks}
 
         case EDIT_TASK:
-            return {...state, tasks: [...state.tasks, {...action.payload}]}
+            const filter = state.tasks.filter(value => value.id !== action.payload.id)
+            const newArr = [...filter, action.payload].sort((a, b) => a.id - b.id)
+            return {...state, tasks: newArr}
 
         default:
             return state
