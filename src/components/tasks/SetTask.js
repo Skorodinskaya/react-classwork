@@ -1,17 +1,15 @@
 import {useDispatch} from "react-redux";
-import {deleteTask} from "../../redux";
+import {deleteTask, editTask} from "../../redux";
 
 export default function SetTask({value}) {
+    const dispatch1 = useDispatch()
     const dispatch = useDispatch()
-  const editButton = (value) => {
-    // editBtn(e)
-  }
 
-  return (
-    <div>
-        {value.task} - {value.description}
-      <button onClick={editButton}> Edit </button>
-      <button onClick={() => dispatch(deleteTask(value.id))}>Delete</button>
-    </div>
-  );
+    return (
+        <div>
+            {value.task} - {value.description}
+            <button onClick={() => dispatch1(editTask(value))}> Edit</button>
+            <button onClick={() => dispatch(deleteTask(value.id))}>Delete</button>
+        </div>
+    );
 }

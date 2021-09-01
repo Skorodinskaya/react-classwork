@@ -12,8 +12,9 @@ export default function () {
 
     const onSubmit = (e) => {
         e.preventDefault();
-        dispatch(editTask(formState))
-        dispatch(setTask(formState));
+        formState.id
+            ? dispatch(editTask(formState))
+            : dispatch(setTask(formState));
 
     }
     return (

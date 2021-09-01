@@ -1,4 +1,4 @@
-import {DELETE_TASK,SET_TASK} from "../actions";
+import {DELETE_TASK, EDIT_TASK, SET_TASK} from "../actions";
 
 export const mainReducer = (state = {tasks: []}, action) => {
     switch (action.type) {
@@ -11,6 +11,9 @@ export const mainReducer = (state = {tasks: []}, action) => {
         case DELETE_TASK:
             const tasks = state.tasks.filter(value => value.id !== action.payload)
             return {...state, tasks}
+
+        case EDIT_TASK:
+            return {...state, tasks: [...state.tasks, {...action.payload}]}
 
         default:
             return state

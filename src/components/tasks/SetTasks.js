@@ -1,7 +1,7 @@
 import {useSelector} from "react-redux";
 import SetTask from "./SetTask";
 
-export default function SetTasks({editBtn}) {
+export default function SetTasks() {
     const {tasks} = useSelector(({mainReducer}) => mainReducer);
 
     return (
