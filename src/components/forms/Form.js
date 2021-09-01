@@ -16,7 +16,9 @@ export default function () {
             ? dispatch(editTask(formState))
             : dispatch(setTask(formState));
 
+        setFormState({task: '', description: ''})
     }
+
     return (
         <div>
             <form onSubmit={onSubmit}>
@@ -25,7 +27,7 @@ export default function () {
                 <button>Add task</button>
             </form>
 
-            <SetTasks editBtn={setFormState}/>
+            <SetTasks setFormState={setFormState}/>
         </div>
     );
 }
